@@ -1,4 +1,3 @@
-
 import { Helmet } from 'react-helmet';
 import { ArrowRight, Paintbrush, Crop, Droplet, Castle, Home, Tractor, Hammer, Trees } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
@@ -16,8 +15,7 @@ const ServicePage = () => {
         'Custom design plans',
         'Plant selection and placement',
         'Sustainable design practices',
-        'Seasonal color planning',
-        '3D visualization available'
+        'Seasonal color planning'
       ],
       image: '/lovable-uploads/ae9dad8f-f778-4317-9445-07f632f87f41.png'
     },
