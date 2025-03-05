@@ -15,7 +15,9 @@ const Hero = () => {
         style={{ 
           backgroundImage: 'url(/lovable-uploads/d8b9d32e-902f-460c-8392-1ff70f13f26a.png)', 
           backgroundPosition: 'center center',
-          filter: 'brightness(0.8)'
+          backgroundSize: 'cover',
+          width: '100%',
+          height: '100%'
         }}
       ></div>
       
