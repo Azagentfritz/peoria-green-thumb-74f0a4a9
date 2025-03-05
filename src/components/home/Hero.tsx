@@ -2,8 +2,17 @@
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { useEffect } from 'react';
 
 const Hero = () => {
+  // Add effect to check if image is loading
+  useEffect(() => {
+    const img = new Image();
+    img.src = '/lovable-uploads/81c31bbc-b761-4eca-8dad-37958daa283f.png';
+    img.onload = () => console.log('Image loaded successfully');
+    img.onerror = (e) => console.error('Error loading image:', e);
+  }, []);
+
   return (
     <div className="relative h-[90vh] min-h-[600px] w-full overflow-hidden">
       {/* Overlay */}
@@ -13,9 +22,9 @@ const Hero = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center"
         style={{ 
-          backgroundImage: 'url(/lovable-uploads/81c31bbc-b761-4eca-8dad-37958daa283f.png)', 
-          backgroundPosition: 'center center',
+          backgroundImage: 'url(/lovable-uploads/81c31bbc-b761-4eca-8dad-37958daa283f.png)',
           backgroundSize: 'cover',
+          backgroundPosition: 'center center',
           width: '100%',
           height: '100%',
           filter: 'brightness(0.8)'
@@ -55,6 +64,15 @@ const Hero = () => {
           </div>
         </div>
       </div>
+
+      {/* Fallback image as a test */}
+      <img 
+        src="/lovable-uploads/81c31bbc-b761-4eca-8dad-37958daa283f.png" 
+        alt="Fallback test" 
+        className="hidden"
+        onLoad={() => console.log('Fallback image loaded')}
+        onError={(e) => console.error('Fallback error:', e)}
+      />
     </div>
   );
 };
